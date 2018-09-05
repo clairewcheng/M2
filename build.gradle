@@ -1,0 +1,28 @@
+apply plugin: "java"
+
+defaultTasks   'jar'
+
+//set up some variables
+version = '1.0'
+
+
+//Define the contents of the jar file
+jar  {
+    manifest {
+        attributes  'Implementation-Title' : 'Gradle Quickstart' ,
+                'Main-Class' : 'edu.gatech.oad.antlab',
+                'Class-Path' : '../../lib/resources.jar' ,
+                'Implementation-Version' : version
+    }
+
+}
+
+dependencies {
+    compile files ('lib/resources.jar')
+    //testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+//setup a location for repositories of any libraries that need to be downloaded
+repositories {
+    mavenCentral()
+}
