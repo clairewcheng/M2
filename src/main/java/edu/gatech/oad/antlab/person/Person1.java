@@ -37,7 +37,7 @@ public class Person1 {
 		} else {
 			String endString = input.substring(stringLength-2, stringLength-1);
 			String firstString = input.substring(0, stringLength-3);
-			input = firstString + endString;
+			input = endString + firstString;
 			return input;
 		}
 	}
