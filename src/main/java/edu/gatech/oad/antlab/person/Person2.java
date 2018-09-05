@@ -1,11 +1,12 @@
 package edu.gatech.oad.antlab.person;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  *  A simple class for person 2
  *  returns their name and a
  *  modified string 
  *
- * @author Bob
+ * @author bthornburgh3
  * @version 1.1
  */
 public class Person2 {
@@ -31,7 +32,21 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+        char[] characters = input.toCharArray();
+        List<Integer> places = new ArrayList<>();
+        char[] newWord = new char[input.length()];
+        int iterator = 0;
+        while (iterator < input.length()) {
+            char add = characters[iterator];
+            int rand = (int)Math.floor(Math.random() * input.length());
+            if (!places.contains(rand)) {
+                places.add(rand);
+                newWord[rand] = add;
+                iterator++;
+            }
+        }
+        String randomWord = String.copyValueOf(newWord);
+	  return randomWord;
 	}
 	/**
 	 * Return a string rep of this object
@@ -45,3 +60,4 @@ public class Person2 {
 	  return name + calc(input);
 	}
 }
+
