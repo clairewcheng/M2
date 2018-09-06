@@ -32,11 +32,11 @@ public class Person1 {
 	private String calc(String input) {
 	  //Person 1 put your implementation here
 		int stringLength = input.length();
-		if(stringLength > 3) {
+		if(stringLength < 3) {
 			return input;
 		} else {
-			String endString = input.substring(stringLength-2, stringLength-1);
-			String firstString = input.substring(0, stringLength-3);
+			String endString = input.substring(stringLength-2, stringLength);
+			String firstString = input.substring(0, stringLength-2);
 			input = endString + firstString;
 			return input;
 		}
